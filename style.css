@@ -1,0 +1,50 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for navigation container */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light background color for contrast */
+}
+
+/* Style for navigation items */
+.navigation span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff; /* Blue background color for icons */
+    border-radius: 50%; /* Circle shape */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navigation span:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Positioning using CSS variables */
+.navigation span {
+    --i: 0;
+    --x: 0;
+    --y: 0;
+    transform: translate(calc(var(--x) * 60px), calc(var(--y) * 60px));
+    z-index: var(--i);
+}
+
+/* Ensure Ionicons are properly sized and centered */
+ion-icon {
+    font-size: 24px;
+    color: white;
+}
